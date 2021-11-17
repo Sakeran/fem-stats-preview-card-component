@@ -1,7 +1,4 @@
 ---
-// Component Imports
-import Button from '../components/Button.astro';
-
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
 ---
@@ -9,13 +6,41 @@ import Button from '../components/Button.astro';
   <head>
     <meta charset="UTF-8" />
 
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon-32x32.png" />
 
-    <title>Astro + TailwindCSS</title>
+    <title>Frontend Mentor | Stats preview card component</title>
     <link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/global.css")}>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap" rel="stylesheet"> 
   </head>
 
-  <body>
-    <Button>I’m a Tailwind Button!</Button>
+  <body class="font-inter bg-blue-900 text-[0.9375rem] text-white ">
+    
+    <main class="min-h-screen flex items-center px-6">
+      <h1 class="sr-only">Stats Preview Card Component</h1>
+      <div class="bg-blue-800 max-w-sm lg:max-w-[69.375rem] rounded-[0.5rem] overflow-hidden mx-auto lg:flex">
+        <div class="bg-violet lg:order-1 lg:w-full">
+          <picture>
+            <source media="(min-width: 33.75em)" srcset="assets/images/image-header-desktop.jpg">
+            <img class="mix-blend-multiply opacity-75 object-cover h-full w-full" src="assets/images/image-header-mobile.jpg" alt="three women in a business meeting">
+          </picture>
+        </div>
+        <div class="p-8 pt-10 text-center lg:p-[4.5rem] lg:text-left lg:w-full">
+          <h2 class="font-bold text-[1.75rem] lg:text-4xl leading-tight lg:max-w-[16ch]">Get <span class="text-violet">insights</span> that help your business grow.</h2>
+          <p class="text-white/75 mt-4 lg:mt-6 lg:max-w-[40ch]">
+            Discover the benefits of data analytics and make better decisions regarding revenue, customer
+            experience, and overall efficiency.
+          </p>
+          <div class="flex flex-col gap-6 mt-10 lg:mt-[4.5rem] lg:flex-row lg:gap-16">
+            <p class="text-white/60 text-xs uppercase font-lex tracking-wider"><span class="block mb-1 text-white text-2xl font-inter font-bold tracking-normal">10k+</span> companies</p>
+            <p class="text-white/60 text-xs uppercase font-lex tracking-wider"><span class="block mb-1 text-white text-2xl font-inter font-bold tracking-normal">314 </span>templates</p>
+            <p class="text-white/60 text-xs uppercase font-lex tracking-wider"><span class="block mb-1 text-white text-2xl font-inter font-bold tracking-normal">12m+</span> queries</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
   </body>
 </html>
